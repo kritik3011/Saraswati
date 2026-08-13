@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-900: #0f172a; /* Tailwind slate-900 */
+  --color-gold: #f59e0b; /* Tailwind amber-500 */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #f8fafc;
+  color: #334155;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+}
+
+.heading-primary {
+  @apply text-navy-900 font-bold;
+}
+
+.btn-primary {
+  @apply bg-gold text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition-colors inline-block;
+}
+
+.btn-secondary {
+  @apply bg-white text-navy-900 border border-navy-900 px-6 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors inline-block;
+}
+
+/* Animations */
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
