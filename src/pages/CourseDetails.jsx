@@ -56,15 +56,15 @@ const CourseDetails = () => {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
           
           {/* Main Content (Left) */}
-          <div className="lg:w-2/3">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
+          <div className="w-full lg:w-2/3">
+            <div className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Course Overview</h2>
               <p className="text-gray-600 mb-6 leading-relaxed whitespace-pre-line">
                 {course.overview || `The ${course.title} program is meticulously designed to provide a comprehensive and structured approach to your preparation. At Saraswati IAS, we believe in building strong fundamentals while simultaneously developing the analytical skills required for the examination.\n\nThis program includes extensive classroom sessions, regular doubt-clearing, dedicated answer writing practice, and full-length mock tests to ensure you are exam-ready.`}
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <div className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Key Features</h2>
               <ul className="space-y-4">
                 {(course.features || [
@@ -82,12 +82,12 @@ const CourseDetails = () => {
               </ul>
             </div>
 
-            <div id="syllabus" className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <div id="syllabus" className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Subjects Covered</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(course.subjects || ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude']).map((subject, idx) => (
                   <div key={idx} className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <BookOpen className="w-5 h-5 text-gold mr-3" />
+                    <BookOpen className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
                     <span className="text-gray-800 font-medium">{subject}</span>
                   </div>
                 ))}
@@ -96,8 +96,8 @@ const CourseDetails = () => {
           </div>
 
           {/* Sidebar (Right) */}
-          <div className="lg:w-1/3 space-y-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-28">
+          <div className="w-full lg:w-1/3 space-y-8">
+            <div className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-gray-100 sticky top-28">
               <h3 className="text-xl font-bold font-poppins text-navy-900 mb-4">Course Highlights</h3>
               
               <div className="space-y-6">

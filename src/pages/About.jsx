@@ -19,14 +19,14 @@ const About = () => {
       {/* Intro */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <img 
               src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" 
               alt="Institute Building" 
               className="rounded-xl shadow-lg w-full"
             />
           </div>
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-3xl font-bold font-poppins text-navy-900 mb-6">Our Journey</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Saraswati IAS was founded with a single, clear vision: to provide quality guidance and structured preparation for aspirants aiming for the Civil Services Examination. 

@@ -7,6 +7,12 @@
   --font-inter: 'Inter', sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -17,7 +23,7 @@ body {
   position: relative;
   -webkit-text-size-adjust: 100%;
   touch-action: pan-y;
-  background-color: #0f172a;
+  background-color: #f8fafc;
 }
 
 #root {
@@ -25,6 +31,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
 }
 
 body {

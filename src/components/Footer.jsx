@@ -51,14 +51,14 @@ const Footer = () => {
             <h4 className="text-lg font-bold font-poppins mb-4 text-gold">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone className="w-5 h-5 text-gold mr-3 mt-0.5" />
-                <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Phone className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" />
+                <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
                   {contactInfo.phone}
                 </a>
               </li>
               <li className="flex items-start">
-                <Mail className="w-5 h-5 text-gold mr-3 mt-0.5" />
-                <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors text-sm">
+                <Mail className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" />
+                <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
                   {contactInfo.email}
                 </a>
               </li>

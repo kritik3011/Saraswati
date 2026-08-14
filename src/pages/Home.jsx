@@ -17,7 +17,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0">
+          <div className="w-full lg:w-1/2 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins mb-6 leading-tight fade-up">
               Prepare for UPSC with the <span className="text-gold">Right Guidance</span>
             </h1>
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="lg:w-1/2 fade-up" style={{ animationDelay: '0.6s' }}>
+          <div className="w-full lg:w-1/2 fade-up" style={{ animationDelay: '0.6s' }}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
               <img 
                 src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1200" 
@@ -42,11 +42,11 @@ const Home = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
-                  <p className="text-white font-semibold flex items-center">
-                    <Award className="w-6 h-6 text-gold mr-3" />
-                    Join the ranks of successful civil servants
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 sm:p-4 rounded-xl">
+                  <p className="text-white font-semibold flex items-center text-xs sm:text-base">
+                    <Award className="w-5 h-5 sm:w-6 sm:h-6 text-gold mr-2 sm:mr-3 flex-shrink-0" />
+                    <span>Join the ranks of successful civil servants</span>
                   </p>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const Home = () => {
       {/* Faculty Section */}
       <section className="py-20 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 md:gap-0">
             <div className="max-w-2xl mb-6 md:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Learn from Experienced Mentors</h2>
               <div className="w-24 h-1 bg-gold mb-6"></div>

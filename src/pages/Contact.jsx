@@ -41,46 +41,46 @@ const Contact = () => {
 
         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="lg:w-1/3">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 h-full">
+          <div className="w-full lg:w-1/3">
+            <div className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 h-full">
               <h3 className="text-2xl font-bold font-poppins text-navy-900 mb-8">Get In Touch</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                  <div className="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
                     <Phone className="w-6 h-6 text-navy-900" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-600 hover:text-gold transition-colors">{contactInfo.phone}</a>
+                    <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-600 hover:text-gold transition-colors break-all">{contactInfo.phone}</a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                  <div className="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
                     <Mail className="w-6 h-6 text-navy-900" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <a href={`mailto:${contactInfo.email}`} className="text-gray-600 hover:text-gold transition-colors">{contactInfo.email}</a>
+                    <a href={`mailto:${contactInfo.email}`} className="text-gray-600 hover:text-gold transition-colors break-all">{contactInfo.email}</a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                  <div className="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
                     <Clock className="w-6 h-6 text-navy-900" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Office Hours</h4>
                     <p className="text-gray-600">{contactInfo.officeHours}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                  <div className="bg-blue-50 p-3 rounded-lg mr-4 flex-shrink-0">
                     <MapPin className="w-6 h-6 text-navy-900 flex-shrink-0" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
                     <p className="text-gray-600">{contactInfo.address}</p>
                   </div>
@@ -90,8 +90,8 @@ const Contact = () => {
           </div>
 
           {/* Enquiry Form */}
-          <div className="lg:w-2/3">
-            <div className="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-gray-100 relative">
+          <div className="w-full lg:w-2/3">
+            <div className="bg-white p-5 sm:p-8 md:p-10 rounded-xl shadow-sm border border-gray-100 relative">
               {isSubmitted && (
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-10 flex flex-col items-center justify-center rounded-xl border border-green-200">
                   <div className="bg-green-100 p-4 rounded-full mb-4">
