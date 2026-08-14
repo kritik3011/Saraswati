@@ -42,18 +42,20 @@ const Navbar = () => {
                 Courses <ChevronDown className="w-4 h-4 ml-1" />
               </button>
               {isCoursesOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-100 rounded-md shadow-lg py-2">
-                  <Link to="/courses/upsc-civil-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Civil Services</Link>
-                  <Link to="/courses/uppsc" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPPSC</Link>
-                  <Link to="/courses/foundation-course" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Foundation Course</Link>
-                  <Link to="/courses/upsc-prelims" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Prelims</Link>
-                  <Link to="/courses/upsc-mains" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Mains</Link>
-                  <div className="border-t border-gray-100 my-1"></div>
-                  <div className="px-4 py-1 text-xs font-semibold text-gray-400 uppercase">Optional Subjects</div>
-                  <Link to="/courses/geography" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Geography</Link>
-                  <Link to="/courses/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">History</Link>
-                  <Link to="/courses/sociology" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Sociology</Link>
-                  <Link to="/courses/political-science" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Political Science</Link>
+                <div className="absolute left-0 top-full pt-2 w-56 z-50">
+                  <div className="bg-white border border-gray-100 rounded-md shadow-lg py-2">
+                    <Link to="/courses/upsc-civil-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Civil Services</Link>
+                    <Link to="/courses/uppsc" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPPSC</Link>
+                    <Link to="/courses/foundation-course" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Foundation Course</Link>
+                    <Link to="/courses/upsc-prelims" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Prelims</Link>
+                    <Link to="/courses/upsc-mains" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Mains</Link>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <div className="px-4 py-1 text-xs font-semibold text-gray-400 uppercase">Optional Subjects</div>
+                    <Link to="/courses/geography" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Geography</Link>
+                    <Link to="/courses/history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">History</Link>
+                    <Link to="/courses/sociology" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Sociology</Link>
+                    <Link to="/courses/political-science" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">Political Science</Link>
+                  </div>
                 </div>
               )}
             </div>

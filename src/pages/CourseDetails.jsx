@@ -59,24 +59,21 @@ const CourseDetails = () => {
           <div className="lg:w-2/3">
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Course Overview</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                The {course.title} program is meticulously designed to provide a comprehensive and structured approach to your preparation. At Saraswati IAS, we believe in building strong fundamentals while simultaneously developing the analytical skills required for the examination.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                This program includes extensive classroom sessions, regular doubt-clearing, dedicated answer writing practice, and full-length mock tests to ensure you are exam-ready.
+              <p className="text-gray-600 mb-6 leading-relaxed whitespace-pre-line">
+                {course.overview || `The ${course.title} program is meticulously designed to provide a comprehensive and structured approach to your preparation. At Saraswati IAS, we believe in building strong fundamentals while simultaneously developing the analytical skills required for the examination.\n\nThis program includes extensive classroom sessions, regular doubt-clearing, dedicated answer writing practice, and full-length mock tests to ensure you are exam-ready.`}
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Key Features</h2>
               <ul className="space-y-4">
-                {[
+                {(course.features || [
                   'Comprehensive coverage of syllabus',
                   'Updated study material aligned with the latest pattern',
                   'Regular answer writing practice sessions',
                   'Personalized mentorship and performance tracking',
                   'Integrated Test Series (Prelims + Mains)'
-                ].map((feature, idx) => (
+                ]).map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
@@ -88,7 +85,7 @@ const CourseDetails = () => {
             <div id="syllabus" className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
               <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Subjects Covered</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude'].map((subject, idx) => (
+                {(course.subjects || ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude']).map((subject, idx) => (
                   <div key={idx} className="flex items-center p-4 bg-gray-50 rounded-lg">
                     <BookOpen className="w-5 h-5 text-gold mr-3" />
                     <span className="text-gray-800 font-medium">{subject}</span>
