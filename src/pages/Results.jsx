@@ -24,13 +24,13 @@ const Results = () => {
         </div>
 
         {/* Filters Placeholder */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-white">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <select className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-white">
             <option>All Examinations</option>
             <option>UPSC CSE</option>
             <option>UPPSC</option>
           </select>
-          <select className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-white">
+          <select className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-white">
             <option>All Years</option>
             <option>2025</option>
             <option>2024</option>

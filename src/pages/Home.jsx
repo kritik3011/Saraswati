@@ -56,8 +56,9 @@ const Home = () => {
       </section>
 
       {/* Trust Statistics */}
-      <section className="py-12 bg-white relative z-20 -mt-10 mx-4 rounded-xl shadow-lg container lg:mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-6">
+      <section className="relative z-20 -mt-10 mb-4 container mx-auto px-4">
+        <div className="py-10 md:py-12 bg-white rounded-xl shadow-lg">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 sm:px-6">
           <div className="text-center">
             <div className="w-12 h-12 bg-blue-50 text-gold rounded-full flex items-center justify-center mx-auto mb-3">
               <Award className="w-6 h-6" />
@@ -87,7 +88,8 @@ const Home = () => {
             <p className="text-gray-500 text-sm">Comprehensive Courses</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">

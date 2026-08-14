@@ -11,8 +11,8 @@ const Navbar = () => {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       {/* Top Announcement Bar */}
       <div className="bg-navy-900 text-white text-xs md:text-sm py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <p>Admissions Open for Upcoming Batches | Talk to Our Counsellor</p>
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-1 sm:gap-0">
+          <p className="text-center sm:text-left">Admissions Open for Upcoming Batches | Talk to Our Counsellor</p>
           <div className="flex items-center space-x-4 mt-2 sm:mt-0">
             <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center hover:text-gold transition-colors">
               <Phone className="w-4 h-4 mr-1" />
