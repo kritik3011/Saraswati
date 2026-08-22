@@ -69,7 +69,6 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <NavLink to="/" end className={navLinkClass}>Home</NavLink>
-            <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
 
             {/* Courses Dropdown */}
             <div
@@ -121,6 +120,7 @@ const Navbar = () => {
             <NavLink to="/study-material" className={navLinkClass}>Study Material</NavLink>
             <NavLink to="/videos" className={navLinkClass}>Videos</NavLink>
             <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
+            <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
             <Link to="/contact" className="bg-gold text-white px-5 py-2 rounded-md font-semibold hover:bg-orange-600 transition-colors">
@@ -142,7 +142,6 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t border-gray-100 pb-24 pt-6 px-6 sm:px-8 shadow-inner">
           <div className="flex flex-col space-y-5">
             <NavLink to="/" end className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Home</NavLink>
-            <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>About Us</NavLink>
 
             <div className="space-y-2">
               <p className="text-[19px] font-bold text-navy-900">Courses</p>
@@ -176,6 +175,7 @@ const Navbar = () => {
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>
             <NavLink to="/videos" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Videos</NavLink>
             <NavLink to="/gallery" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Gallery</NavLink>
+            <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>About Us</NavLink>
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Contact</NavLink>
 
             {/* Mobile phone numbers */}
