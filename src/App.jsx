@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -17,26 +17,34 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
+// Wraps routes with a fade-in animation on every page change
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <main key={location.pathname} className="flex-grow w-full overflow-x-hidden page-enter">
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:slug" element={<CourseDetails />} />
+        <Route path="/faculty" element={<Faculty />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/study-material" element={<StudyMaterial />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
+  );
+};
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
         <Navbar />
-        <main className="flex-grow w-full overflow-x-hidden">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/courses/:slug" element={<CourseDetails />} />
-            <Route path="/faculty" element={<Faculty />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/study-material" element={<StudyMaterial />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
+        <AnimatedRoutes />
         <Footer />
         <WhatsAppButton />
       </div>
