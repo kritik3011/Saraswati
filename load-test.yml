@@ -1,0 +1,92 @@
+config:
+  target: "https://saraswati-ias.onrender.com"
+  phases:
+    # Phase 1: Warm-up — gradual ramp-up
+    - name: "Warm-up"
+      duration: 30
+      arrivalRate: 5
+      rampTo: 20
+
+    # Phase 2: Sustained Load — peak traffic simulation
+    - name: "Sustained Load"
+      duration: 60
+      arrivalRate: 50
+
+    # Phase 3: Spike — sudden traffic burst
+    - name: "Spike"
+      duration: 20
+      arrivalRate: 100
+
+    # Phase 4: Cool-down — gradual decrease
+    - name: "Cool-down"
+      duration: 20
+      arrivalRate: 10
+
+  http:
+    timeout: 30
+    maxSockets: 50
+  
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  # Scenario 1: Home Page Visit
+  - name: "Visit Home Page"
+    weight: 40
+    flow:
+      - get:
+          url: "/"
+          expect:
+            - statusCode: 200
+
+  # Scenario 2: Browse Courses
+  - name: "Browse Courses"
+    weight: 25
+    flow:
+      - get:
+          url: "/"
+          expect:
+            - statusCode: 200
+      - think: 2
+      - get:
+          url: "/courses"
+          expect:
+            - statusCode: 200
+
+  # Scenario 3: View About Page
+  - name: "View About"
+    weight: 15
+    flow:
+      - get:
+          url: "/"
+          expect:
+            - statusCode: 200
+      - think: 1
+      - get:
+          url: "/about"
+          expect:
+            - statusCode: 200
+
+  # Scenario 4: Full User Journey
+  - name: "Full User Journey"
+    weight: 20
+    flow:
+      - get:
+          url: "/"
+          expect:
+            - statusCode: 200
+      - think: 2
+      - get:
+          url: "/courses"
+          expect:
+            - statusCode: 200
+      - think: 3
+      - get:
+          url: "/faculty"
+          expect:
+            - statusCode: 200
+      - think: 2
+      - get:
+          url: "/contact"
+          expect:
+            - statusCode: 200
