@@ -16,7 +16,7 @@ const Navbar = () => {
     }`;
 
   const mobileNavLinkClass = ({ isActive }) =>
-    `block ${isActive ? 'text-gold font-bold' : 'text-gray-700 hover:text-navy-900'}`;
+    `block text-[17px] py-1 ${isActive ? 'text-gold font-bold' : 'text-gray-700 hover:text-navy-900'}`;
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -139,29 +139,38 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 py-4 px-4 shadow-inner">
-          <div className="flex flex-col space-y-4">
+        <div className="md:hidden bg-white border-t border-gray-100 pb-24 pt-6 px-6 sm:px-8 shadow-inner">
+          <div className="flex flex-col space-y-5">
             <NavLink to="/" end className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Home</NavLink>
             <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>About Us</NavLink>
 
-            <div className="border-l-2 border-gray-100 pl-4 space-y-3">
-              <p className="text-sm font-semibold text-gray-400">Courses</p>
-              <NavLink to="/courses/upsc-civil-services" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPSC Civil Services</NavLink>
-              <NavLink to="/courses/uppsc" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPPSC</NavLink>
-              <NavLink to="/courses/foundation-course" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Foundation Course</NavLink>
-              <NavLink to="/courses/upsc-prelims" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPSC Prelims</NavLink>
-              <NavLink to="/courses/upsc-mains" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPSC Mains</NavLink>
-              <p className="text-sm font-semibold text-gray-400 mt-2">Optional Subjects</p>
-              <NavLink to="/courses/geography" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Geography</NavLink>
-              <NavLink to="/courses/history" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>History</NavLink>
-              <NavLink to="/courses/sociology" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Sociology</NavLink>
-              <NavLink to="/courses/political-science" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Political Science</NavLink>
+            <div className="space-y-2">
+              <p className="text-[19px] font-bold text-navy-900">Courses</p>
+              <div className="border-l border-gray-200 pl-5 space-y-3 ml-2 py-1">
+                <NavLink to="/courses/upsc-civil-services" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPSC Civil Services</NavLink>
+                <NavLink to="/courses/uppsc" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPPSC</NavLink>
+                <NavLink to="/courses/foundation-course" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>Foundation Course</NavLink>
+                <NavLink to="/courses/upsc-prelims" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPSC Prelims</NavLink>
+                <NavLink to="/courses/upsc-mains" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPSC Mains</NavLink>
+              </div>
             </div>
 
-            <div className="border-l-2 border-gray-100 pl-4 space-y-3">
-              <p className="text-sm font-semibold text-gray-400">Official Links</p>
-              <a href="https://www.upsc.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPSC Website</a>
-              <a href="https://web.archive.org/web/20210618222017/http://uppsc.up.nic.in/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPPSC Website</a>
+            <div className="space-y-2">
+              <p className="text-[19px] font-bold text-navy-900">Optional Subjects</p>
+              <div className="border-l border-gray-200 pl-5 space-y-3 ml-2 py-1">
+                <NavLink to="/courses/geography" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>Geography</NavLink>
+                <NavLink to="/courses/history" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>History</NavLink>
+                <NavLink to="/courses/sociology" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>Sociology</NavLink>
+                <NavLink to="/courses/political-science" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>Political Science</NavLink>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-[19px] font-bold text-navy-900">Official Links</p>
+              <div className="border-l border-gray-200 pl-5 space-y-3 ml-2 py-1">
+                <a href="https://www.upsc.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPSC Website</a>
+                <a href="https://web.archive.org/web/20210618222017/http://uppsc.up.nic.in/" target="_blank" rel="noopener noreferrer" className="block text-[17px] text-gray-600 hover:text-navy-900" onClick={() => setIsOpen(false)}>UPPSC Website</a>
+              </div>
             </div>
 
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>
@@ -170,16 +179,16 @@ const Navbar = () => {
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Contact</NavLink>
 
             {/* Mobile phone numbers */}
-            <div className="flex flex-col gap-2 pt-1 border-t border-gray-100">
-              <a href={`tel:${contactInfo.phone}`} className="flex items-center text-sm text-navy-900 font-semibold">
-                <Phone className="w-4 h-4 mr-2 text-gold" />{contactInfo.phone}
+            <div className="flex flex-col gap-3 pt-6 pb-2 border-t border-gray-100">
+              <a href={`tel:${contactInfo.phone}`} className="flex items-center text-[17px] text-navy-900 font-bold">
+                <Phone className="w-5 h-5 mr-3 text-gold" />{contactInfo.phone}
               </a>
-              <a href={`tel:${contactInfo.phone2}`} className="flex items-center text-sm text-navy-900 font-semibold">
-                <Phone className="w-4 h-4 mr-2 text-gold" />{contactInfo.phone2}
+              <a href={`tel:${contactInfo.phone2}`} className="flex items-center text-[17px] text-navy-900 font-bold">
+                <Phone className="w-5 h-5 mr-3 text-gold" />{contactInfo.phone2}
               </a>
             </div>
 
-            <Link to="/contact" className="bg-gold text-white text-center px-4 py-2 rounded-md font-semibold" onClick={() => setIsOpen(false)}>
+            <Link to="/contact" className="bg-gold text-white text-center px-4 py-3 rounded-md font-semibold text-[17px]" onClick={() => setIsOpen(false)}>
               Enquire Now
             </Link>
           </div>
