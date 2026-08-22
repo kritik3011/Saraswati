@@ -99,6 +99,7 @@ const Navbar = () => {
             </div>
 
             <NavLink to="/study-material" className={navLinkClass}>Study Material</NavLink>
+            <NavLink to="/videos" className={navLinkClass}>Videos</NavLink>
             <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
@@ -138,6 +139,7 @@ const Navbar = () => {
             </div>
 
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>
+            <NavLink to="/videos" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Videos</NavLink>
             <NavLink to="/gallery" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Gallery</NavLink>
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Contact</NavLink>
 
