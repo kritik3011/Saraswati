@@ -23,10 +23,15 @@ const Navbar = () => {
       <div className="bg-navy-900 text-white text-xs md:text-sm py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-1 sm:gap-0">
           <p>Admissions Open for Upcoming Batches | Talk to Our Counsellor</p>
-          <div className="flex items-center space-x-4 mt-2 sm:mt-0">
-            <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center hover:text-gold transition-colors">
+          <div className="flex items-center space-x-3 mt-2 sm:mt-0">
+            <a href={`tel:${contactInfo.phone}`} className="flex items-center hover:text-gold transition-colors">
               <Phone className="w-4 h-4 mr-1" />
               {contactInfo.phone}
+            </a>
+            <span className="text-gray-500">|</span>
+            <a href={`tel:${contactInfo.phone2}`} className="flex items-center hover:text-gold transition-colors">
+              <Phone className="w-4 h-4 mr-1" />
+              {contactInfo.phone2}
             </a>
           </div>
         </div>
@@ -36,11 +41,28 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
 
-          {/* Logo */}
-          <Link to="/" className="flex flex-col items-start text-navy-900 leading-none">
-            <span className="text-[10px] sm:text-xs font-bold tracking-wide">Since-1998</span>
-            <span className="text-2xl sm:text-3xl font-black font-poppins tracking-tight mt-0.5 mb-0.5">सरस्वती IAS</span>
-            <span className="text-[9px] sm:text-[11px] font-medium text-gray-700">आपके सपनों को करे साकार ... रखे आगे</span>
+          {/* Logo — circular image + text, PW-style */}
+          <Link to="/" className="flex items-center gap-3 text-navy-900 leading-none group">
+            {/* Circular logo */}
+            <div className="relative flex-shrink-0 w-14 h-14">
+              <img
+                src="/logo.jpg"
+                alt="Saraswati IAS Logo"
+                className="w-14 h-14 rounded-full object-cover border-[3px] border-yellow-500 shadow-md group-hover:shadow-yellow-400/50 transition-shadow duration-300"
+                onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex'; }}
+              />
+              {/* Fallback if image not found */}
+              <div style={{display:'none'}} className="absolute inset-0 rounded-full bg-black border-[3px] border-yellow-500 flex items-center justify-center">
+                <span className="text-yellow-400 font-black text-sm leading-none">IAS</span>
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col leading-tight">
+              <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Since 1998</span>
+              <span className="brand-name text-xl sm:text-2xl text-navy-900">सरस्वती IAS</span>
+              <span className="text-[8px] sm:text-[10px] font-medium text-gray-500">आपके सपनों को करे साकार ... रखे आगे</span>
+            </div>
           </Link>
 
           {/* Desktop Menu */}
@@ -76,8 +98,6 @@ const Navbar = () => {
               )}
             </div>
 
-            <NavLink to="/faculty" className={navLinkClass}>Faculty</NavLink>
-            <NavLink to="/results" className={navLinkClass}>Results</NavLink>
             <NavLink to="/study-material" className={navLinkClass}>Study Material</NavLink>
             <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
@@ -117,11 +137,19 @@ const Navbar = () => {
               <NavLink to="/courses/political-science" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Political Science</NavLink>
             </div>
 
-            <NavLink to="/faculty" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Faculty</NavLink>
-            <NavLink to="/results" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Results</NavLink>
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>
             <NavLink to="/gallery" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Gallery</NavLink>
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Contact</NavLink>
+
+            {/* Mobile phone numbers */}
+            <div className="flex flex-col gap-2 pt-1 border-t border-gray-100">
+              <a href={`tel:${contactInfo.phone}`} className="flex items-center text-sm text-navy-900 font-semibold">
+                <Phone className="w-4 h-4 mr-2 text-gold" />{contactInfo.phone}
+              </a>
+              <a href={`tel:${contactInfo.phone2}`} className="flex items-center text-sm text-navy-900 font-semibold">
+                <Phone className="w-4 h-4 mr-2 text-gold" />{contactInfo.phone2}
+              </a>
+            </div>
 
             <Link to="/contact" className="bg-gold text-white text-center px-4 py-2 rounded-md font-semibold" onClick={() => setIsOpen(false)}>
               Enquire Now
@@ -134,3 +162,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

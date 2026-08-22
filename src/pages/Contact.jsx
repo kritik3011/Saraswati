@@ -52,7 +52,8 @@ const Contact = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-600 hover:text-gold transition-colors break-all">{contactInfo.phone}</a>
+                    <a href={`tel:${contactInfo.phone}`} className="block text-gray-600 hover:text-gold transition-colors break-all">{contactInfo.phone}</a>
+                    <a href={`tel:${contactInfo.phone2}`} className="block text-gray-600 hover:text-gold transition-colors break-all">{contactInfo.phone2}</a>
                   </div>
                 </div>
 
@@ -82,7 +83,14 @@ const Contact = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-600">{contactInfo.address}</p>
+                    <a
+                      href={contactInfo.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-gold transition-colors text-sm leading-relaxed block"
+                    >
+                      {contactInfo.address}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -188,12 +196,39 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="mt-16 bg-gray-200 rounded-xl h-96 w-full flex items-center justify-center border border-gray-300 overflow-hidden relative">
-           <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-semibold bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=New+Delhi&zoom=13&size=1200x400&maptype=roadmap&sensor=false')] bg-cover opacity-50"></div>
-           <div className="relative z-10 bg-white px-6 py-3 rounded-md shadow-md text-navy-900 font-semibold border border-gray-100 flex items-center">
-             <MapPin className="w-5 h-5 text-gold mr-2" /> Google Maps Integration
-           </div>
+        {/* Live Google Maps */}
+        <div className="mt-16 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+          <div className="bg-navy-900 px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-gold" />
+              <span className="text-white font-semibold text-sm">Saraswati IAS — Gorakhpur</span>
+            </div>
+            <a
+              href={contactInfo.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs bg-gold text-white px-3 py-1.5 rounded-md font-semibold hover:bg-orange-500 transition-colors flex items-center gap-1"
+            >
+              <MapPin className="w-3 h-3" /> Open in Google Maps
+            </a>
+          </div>
+          <iframe
+            title="Saraswati IAS Location"
+            src={contactInfo.mapsEmbed}
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="block"
+          />
+          <div className="bg-white px-6 py-3 border-t border-gray-100">
+            <p className="text-sm text-gray-500 flex items-start gap-2">
+              <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+              {contactInfo.address}
+            </p>
+          </div>
         </div>
       </div>
     </div>

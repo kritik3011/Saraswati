@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <div className="flex flex-col items-start text-white leading-none mb-4">
               <span className="text-xs font-bold tracking-wide text-gray-300">Since-1998</span>
-              <span className="text-3xl font-black font-poppins tracking-tight mt-0.5 mb-0.5">सरस्वती IAS</span>
+              <span className="brand-name text-3xl text-white">सरस्वती IAS</span>
               <span className="text-[11px] font-medium text-gray-400">आपके सपनों को करे साकार ... रखे आगे</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -52,10 +52,16 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" />
-                <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
-                  {contactInfo.phone}
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href={`tel:${contactInfo.phone}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
+                    {contactInfo.phone}
+                  </a>
+                  <a href={`tel:${contactInfo.phone2}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
+                    {contactInfo.phone2}
+                  </a>
+                </div>
               </li>
+
               <li className="flex items-start">
                 <Mail className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" />
                 <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors text-sm break-all">
@@ -64,7 +70,14 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">{contactInfo.address}</span>
+                <a
+                  href={contactInfo.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors text-sm leading-relaxed"
+                >
+                  {contactInfo.address}
+                </a>
               </li>
             </ul>
           </div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, BookOpen, Target, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, BookOpen, Target, Award, CheckCircle, MapPin } from 'lucide-react';
 import CourseCard from '../components/CourseCard';
 import FacultyCard from '../components/FacultyCard';
 import TestimonialCard from '../components/TestimonialCard';
 import { courses, optionalSubjects } from '../data/courses';
 import { faculty } from '../data/faculty';
 import { testimonials } from '../data/testimonials';
+import { contactInfo } from '../data/contact';
 
 const Home = () => {
   return (
@@ -142,27 +143,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Faculty Section */}
-      <section className="py-20 bg-navy-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 md:gap-0">
-            <div className="max-w-2xl mb-6 md:mb-0">
-              <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Learn from Experienced Mentors</h2>
-              <div className="w-24 h-1 bg-gold mb-6"></div>
-              <p className="text-gray-300">Our faculty members are subject experts dedicated to simplifying complex topics and guiding you toward success.</p>
-            </div>
-            <Link to="/faculty" className="text-gold hover:text-white font-semibold flex items-center transition-colors">
-              Meet Our Faculty <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {faculty.map((member, idx) => (
-              <FacultyCard key={idx} faculty={member} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">
@@ -173,7 +153,7 @@ const Home = () => {
             <p className="text-gray-600">Hear from our students about their experience and preparation journey with Saraswati IAS.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((test, idx) => (
               <TestimonialCard key={idx} testimonial={test} />
             ))}
@@ -195,6 +175,62 @@ const Home = () => {
             <Link to="/courses" className="btn-secondary">
               Explore Courses
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Location / Google Maps Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy-900 mb-4">Find Us</h2>
+            <div className="w-24 h-1 bg-gold mx-auto mb-4"></div>
+            <p className="text-gray-600">Visit us at our coaching centre in Gorakhpur. We're easy to find!</p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 max-w-5xl mx-auto">
+            {/* Map Header */}
+            <div className="bg-navy-900 px-6 py-4 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-gold" />
+                <span className="text-white font-semibold text-sm">Saraswati IAS — Gorakhpur</span>
+              </div>
+              <a
+                href={contactInfo.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs bg-gold text-white px-3 py-1.5 rounded-md font-semibold hover:bg-orange-500 transition-colors flex items-center gap-1"
+              >
+                <MapPin className="w-3 h-3" /> Open in Google Maps
+              </a>
+            </div>
+
+            {/* Iframe */}
+            <iframe
+              title="Saraswati IAS Gorakhpur Location"
+              src={contactInfo.mapsEmbed}
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block"
+            />
+
+            {/* Address strip */}
+            <div className="bg-white px-6 py-4 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <p className="text-sm text-gray-500 flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                {contactInfo.address}
+              </p>
+              <Link
+                to="/contact"
+                className="flex-shrink-0 text-xs bg-navy-900 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-900 transition-colors"
+              >
+                Get Directions &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>

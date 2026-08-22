@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-navy-900: #0f172a; /* Tailwind slate-900 */
-  --color-gold: #f59e0b; /* Tailwind amber-500 */
+  --color-navy-900: #0f172a;
+  --color-gold: #f59e0b;
   --font-poppins: 'Poppins', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
 }
 
 *,
@@ -42,6 +44,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins);
+}
+
+/* Brand name — matches logo Devanagari style */
+.brand-name {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .heading-primary {
