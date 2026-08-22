@@ -2,7 +2,7 @@ export const contactInfo = {
   phone: "9559970002",
   phone2: "9559970003",
   whatsapp: "919559970002",
-  email: "info@saraswatiias.in",
+  email: "Kritikbhatt411@gmail.com",
   address: "Saraswati Sadan, Bansgaon Colony, Paidleganj, In front of Rajvanshi Neuro & Maternity Hospital, Gorakhpur, Uttar Pradesh - 273001",
   mapsUrl: "https://www.google.com/maps/place/Saraswati+IAS+Coaching/@26.7438113,83.3835864,17z",
   mapsEmbed: "https://maps.google.com/maps?q=26.7438113,83.3835864&hl=en&z=17&output=embed",

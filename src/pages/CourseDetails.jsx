@@ -83,15 +83,41 @@ const CourseDetails = () => {
             </div>
 
             <div id="syllabus" className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 mb-8">
-              <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Subjects Covered</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(course.subjects || ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude']).map((subject, idx) => (
-                  <div key={idx} className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <BookOpen className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
-                    <span className="text-gray-800 font-medium">{subject}</span>
+              {course.detailedSyllabus ? (
+                <>
+                  <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Detailed Syllabus</h2>
+                  <div className="space-y-6">
+                    {course.detailedSyllabus.map((section, idx) => (
+                      <div key={idx} className="bg-gray-50 p-5 rounded-lg border border-gray-100">
+                        <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center">
+                          <BookOpen className="w-5 h-5 text-gold mr-3" />
+                          {section.title}
+                        </h3>
+                        <ul className="space-y-3">
+                          {section.topics.map((topic, topicIdx) => (
+                            <li key={topicIdx} className="flex items-start">
+                              <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-700">{topic}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold font-poppins text-navy-900 mb-6 border-b pb-4">Subjects Covered</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {(course.subjects || ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude']).map((subject, idx) => (
+                      <div key={idx} className="flex items-center p-4 bg-gray-50 rounded-lg">
+                        <BookOpen className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
+                        <span className="text-gray-800 font-medium">{subject}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
 

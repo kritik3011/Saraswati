@@ -13,7 +13,42 @@ export const courses = [
       'Personalized mentorship and performance tracking',
       'Integrated Test Series (Prelims + Mains)'
     ],
-    subjects: ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude']
+    subjects: ['History & Culture', 'Geography', 'Indian Polity & Governance', 'Economy', 'Science & Technology', 'Environment', 'International Relations', 'Ethics & Aptitude'],
+    detailedSyllabus: [
+      {
+        title: 'Preliminary Examination (Paper I) - General Studies',
+        topics: [
+          'Current events of national and international importance.',
+          'History of India and Indian National Movement.',
+          'Indian and World Geography - Physical, Social, Economic Geography of India and the World.',
+          'Indian Polity and Governance - Constitution, Political System, Panchayati Raj, Public Policy, Rights Issues, etc.',
+          'Economic and Social Development - Sustainable Development, Poverty, Inclusion, Demographics, Social Sector Initiatives, etc.',
+          'General issues on Environmental ecology, Bio-diversity and Climate Change - that do not require subject specialization.',
+          'General Science.'
+        ]
+      },
+      {
+        title: 'Preliminary Examination (Paper II) - CSAT',
+        topics: [
+          'Comprehension.',
+          'Interpersonal skills including communication skills.',
+          'Logical reasoning and analytical ability.',
+          'Decision making and problem solving.',
+          'General mental ability.',
+          'Basic numeracy (numbers and their relations, orders of magnitude, etc.) (Class X level).',
+          'Data interpretation (charts, graphs, tables, data sufficiency etc. - Class X level).'
+        ]
+      },
+      {
+        title: 'Mains Examination (General Studies I-IV)',
+        topics: [
+          'GS Paper I: Indian Heritage and Culture, History and Geography of the World and Society.',
+          'GS Paper II: Governance, Constitution, Polity, Social Justice and International relations.',
+          'GS Paper III: Technology, Economic Development, Bio diversity, Environment, Security and Disaster Management.',
+          'GS Paper IV: Ethics, Integrity and Aptitude.'
+        ]
+      }
+    ]
   },
   {
     id: 'uppsc',

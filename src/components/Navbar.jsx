@@ -6,6 +6,7 @@ import { contactInfo } from '../data/contact';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const [isLinksOpen, setIsLinksOpen] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
     `relative font-medium inline-block transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
@@ -98,6 +99,25 @@ const Navbar = () => {
               )}
             </div>
 
+            {/* Official Links Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsLinksOpen(true)}
+              onMouseLeave={() => setIsLinksOpen(false)}
+            >
+              <button className="flex items-center text-gray-600 hover:text-navy-900 font-medium transition-colors duration-200">
+                Official Links <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              {isLinksOpen && (
+                <div className="absolute left-0 top-full pt-2 w-48 z-50">
+                  <div className="bg-white border border-gray-100 rounded-md shadow-lg py-2">
+                    <a href="https://www.upsc.gov.in/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPSC Website</a>
+                    <a href="https://web.archive.org/web/20210618222017/http://uppsc.up.nic.in/" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy-900">UPPSC Website</a>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <NavLink to="/study-material" className={navLinkClass}>Study Material</NavLink>
             <NavLink to="/videos" className={navLinkClass}>Videos</NavLink>
             <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
@@ -136,6 +156,12 @@ const Navbar = () => {
               <NavLink to="/courses/history" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>History</NavLink>
               <NavLink to="/courses/sociology" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Sociology</NavLink>
               <NavLink to="/courses/political-science" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>Political Science</NavLink>
+            </div>
+
+            <div className="border-l-2 border-gray-100 pl-4 space-y-3">
+              <p className="text-sm font-semibold text-gray-400">Official Links</p>
+              <a href="https://www.upsc.gov.in/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPSC Website</a>
+              <a href="https://web.archive.org/web/20210618222017/http://uppsc.up.nic.in/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-600" onClick={() => setIsOpen(false)}>UPPSC Website</a>
             </div>
 
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>

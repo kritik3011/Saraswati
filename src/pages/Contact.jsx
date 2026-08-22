@@ -19,12 +19,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setFormData({ name: '', phone: '', email: '', course: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1000);
+    
+    // Construct the message body
+    const messageBody = `New Enquiry from Saraswati IAS Website:
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Course: ${formData.course}
+Message: ${formData.message}`;
+
+    // Construct URLs
+    const whatsappUrl = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(messageBody)}`;
+    const emailUrl = `mailto:${contactInfo.email}?subject=New Enquiry - ${formData.name}&body=${encodeURIComponent(messageBody)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Open Email client
+    window.location.href = emailUrl;
+
+    setIsSubmitted(true);
+    setFormData({ name: '', phone: '', email: '', course: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   return (
