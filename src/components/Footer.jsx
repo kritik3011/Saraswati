@@ -88,8 +88,8 @@ const Footer = () => {
             &copy; {currentYear} Saraswati IAS. All Rights Reserved.
           </p>
           <div className="flex space-x-4">
-            <Link to="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link>
-            <Link to="#" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</Link>
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</Link>
           </div>
         </div>
       </div>

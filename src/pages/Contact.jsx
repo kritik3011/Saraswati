@@ -14,7 +14,15 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      const onlyNums = value.replace(/[^0-9]/g, '');
+      if (onlyNums.length <= 10) {
+        setFormData({ ...formData, [name]: onlyNums });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -139,7 +147,6 @@ Message: ${formData.message}`;
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-                      placeholder="John Doe"
                     />
                   </div>
                   <div>
@@ -149,10 +156,13 @@ Message: ${formData.message}`;
                       id="phone" 
                       name="phone" 
                       required
+                      minLength="10"
+                      maxLength="10"
+                      pattern="[0-9]{10}"
+                      title="Please enter a valid 10-digit phone number"
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-                      placeholder="+91 9876543210"
                     />
                   </div>
                 </div>
@@ -167,7 +177,6 @@ Message: ${formData.message}`;
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-                      placeholder="john@example.com"
                     />
                   </div>
                   <div>
@@ -200,7 +209,6 @@ Message: ${formData.message}`;
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold resize-none"
-                    placeholder="Tell us about your preparation goals..."
                   ></textarea>
                 </div>
 

@@ -13,9 +13,11 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-navy-900 text-white overflow-hidden py-20 lg:py-32">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-blue-900 opacity-90 z-0"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay z-0"></div>
+      <section className="relative bg-navy-900 text-white overflow-hidden py-12 lg:py-16">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-[url('/channel-banner.png')] bg-cover bg-center z-0"></div>
+        {/* Gradient Overlay (Darker on left for text, more transparent on right for image) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-blue-900/40 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0">
@@ -38,8 +40,8 @@ const Home = () => {
           <div className="w-full lg:w-1/2 fade-up" style={{ animationDelay: '0.6s' }}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1200" 
-                alt="Students studying" 
+                src="/channel-banner.png" 
+                alt="Saraswati IAS Success" 
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent"></div>
