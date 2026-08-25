@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, BookOpen, Target, Award, CheckCircle, MapPin } from 'lucide-react';
 import CourseCard from '../components/CourseCard';
@@ -9,22 +9,36 @@ import { faculty } from '../data/faculty';
 import { testimonials } from '../data/testimonials';
 import { contactInfo } from '../data/contact';
 
+const heroImages = [
+  '/channel-banner.png',
+  '/s4r.webp',
+  '/slider4.webp'
+];
+
 const Home = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4500); // 4.5 seconds display time
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-navy-900 text-white overflow-hidden py-12 lg:py-16">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/channel-banner.png')] bg-cover bg-center z-0"></div>
-        {/* Gradient Overlay (Darker on left for text, more transparent on right for image) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-blue-900/40 z-0"></div>
+      <section className="relative bg-navy-900 text-white overflow-hidden py-16 lg:py-24">
+        {/* Subtle Gradient Background instead of duplicate image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-blue-900/80 to-navy-900 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center">
-          <div className="w-full lg:w-1/2 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0">
-            <h1 className="text-4xl lg:text-6xl font-bold font-poppins mb-6 leading-tight fade-up">
-              Prepare for UPSC with the <span className="text-gold">Right Guidance</span>
+          <div className="w-full lg:w-4/12 lg:pr-4 text-center lg:text-left mb-12 lg:mb-0">
+            <h1 className="text-3xl lg:text-4xl font-bold font-poppins mb-4 leading-tight fade-up">
+              Prepare for UPSC with the <br className="hidden lg:block" />
+              <span className="text-gold">Right Guidance</span>
             </h1>
-            <p className="text-lg text-gray-200 mb-8 max-w-xl mx-auto lg:mx-0 fade-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-sm lg:text-base text-gray-200 mb-6 max-w-lg mx-auto lg:mx-0 fade-up" style={{ animationDelay: '0.2s' }}>
               Structured courses, experienced faculty, comprehensive study material, and focused mentorship to help you move closer to your Civil Services dream.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-up" style={{ animationDelay: '0.4s' }}>
@@ -37,21 +51,33 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 fade-up" style={{ animationDelay: '0.6s' }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-              <img 
-                src="/channel-banner.png" 
-                alt="Saraswati IAS Success" 
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 sm:p-4 rounded-xl">
-                  <p className="text-white font-semibold flex items-center text-xs sm:text-base">
-                    <Award className="w-5 h-5 sm:w-6 sm:h-6 text-gold mr-2 sm:mr-3 flex-shrink-0" />
-                    <span>Join the ranks of successful civil servants</span>
-                  </p>
-                </div>
+          <div className="w-full lg:w-8/12 mt-4 lg:mt-0 fade-up" style={{ animationDelay: '0.6s' }}>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 max-w-5xl mx-auto group">
+              <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[450px]">
+                {heroImages.map((imgSrc, index) => (
+                  <img 
+                    key={index}
+                    src={imgSrc}
+                    alt="" 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                      currentImageIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              {/* Pagination Bubbles */}
+              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      currentImageIndex === index ? 'bg-gold w-6' : 'bg-white/50 w-2 hover:bg-white'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -155,31 +181,18 @@ const Home = () => {
             <p className="text-gray-600">Hear from our students about their experience and preparation journey with Saraswati IAS.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile: Horizontal scroll with snap, Desktop: Grid */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {testimonials.map((test, idx) => (
-              <TestimonialCard key={idx} testimonial={test} />
+              <div key={idx} className="min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink h-full">
+                <TestimonialCard testimonial={test} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy-900 mb-6">Ready to Begin Your Civil Services Journey?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Get expert guidance and choose the right preparation program for your goals. Talk to our counsellors today.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link to="/contact" className="btn-primary">
-              Book Free Counselling
-            </Link>
-            <Link to="/courses" className="btn-secondary">
-              Explore Courses
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* Location / Google Maps Section */}
       <section className="bg-gray-50 py-16">

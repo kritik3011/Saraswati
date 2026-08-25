@@ -19,20 +19,20 @@ const About = () => {
       {/* Intro */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-5/12 flex justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" 
+              src="/9343714.webp" 
               alt="Institute Building" 
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full max-w-sm h-auto object-contain"
             />
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-7/12">
             <h2 className="text-3xl font-bold font-poppins text-navy-900 mb-6">Our Journey</h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Saraswati IAS was founded with a single, clear vision: to provide quality guidance and structured preparation for aspirants aiming for the Civil Services Examination. 
+              Saraswati IAS was established in 1998 in Gorakhpur with the inspiration of two IAS officers. The objective behind this was to provide high quality study environment to the regional competitive students for Civil Services Examination (IAS/PCS).
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Over the years, we have built a reputation for academic excellence, dedicated mentorship, and a student-first approach. We believe that with the right strategy, consistent effort, and expert guidance, any aspirant can achieve their dream.
+              Thousands of students of the region have to go to Delhi or Prayagraj (Allahabad) every year to prepare for the Civil Services Examination. We aim to bridge that gap by offering top-tier guidance right here in Gorakhpur.
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="border-l-4 border-gold pl-4">

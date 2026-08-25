@@ -13,7 +13,6 @@ import CourseDetails from './pages/CourseDetails';
 import Faculty from './pages/Faculty';
 import Results from './pages/Results';
 import StudyMaterial from './pages/StudyMaterial';
-import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Videos from './pages/Videos';
@@ -34,7 +33,6 @@ const AnimatedRoutes = () => {
         <Route path="/results" element={<Results />} />
         <Route path="/study-material" element={<StudyMaterial />} />
         <Route path="/videos" element={<Videos />} />
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />

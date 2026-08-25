@@ -142,11 +142,7 @@ const Videos = () => {
       <div className="bg-white border-b shadow-sm">
         {/* Banner Area */}
         <div className="h-[160px] md:h-[220px] w-full relative bg-navy-900 overflow-hidden">
-          <img
-            src="/channel-banner.jpg"
-            alt="Channel Banner"
-            className="w-full h-full object-cover opacity-90"
-          />
+          {/* Solid color background banner */}
           {/* Subtle text overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white/90">
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest uppercase mb-1">Saraswati IAS</h2>

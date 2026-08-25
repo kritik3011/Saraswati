@@ -43,26 +43,26 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
 
           {/* Logo — circular image + text, PW-style */}
-          <Link to="/" className="flex items-center gap-3 text-navy-900 leading-none group">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 text-navy-900 leading-none group">
             {/* Circular logo */}
-            <div className="relative flex-shrink-0 w-14 h-14">
+            <div className="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14">
               <img
                 src="/logo.jpg"
                 alt="Saraswati IAS Logo"
-                className="w-14 h-14 rounded-full object-cover border-[3px] border-yellow-500 shadow-md group-hover:shadow-yellow-400/50 transition-shadow duration-300"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-[3px] border-yellow-500 shadow-md group-hover:shadow-yellow-400/50 transition-shadow duration-300"
                 onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex'; }}
               />
               {/* Fallback if image not found */}
               <div style={{display:'none'}} className="absolute inset-0 rounded-full bg-black border-[3px] border-yellow-500 flex items-center justify-center">
-                <span className="text-yellow-400 font-black text-sm leading-none">IAS</span>
+                <span className="text-yellow-400 font-black text-[10px] sm:text-sm leading-none">IAS</span>
               </div>
             </div>
 
             {/* Text */}
             <div className="flex flex-col leading-tight">
-              <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Since 1998</span>
-              <span className="brand-name text-xl sm:text-2xl text-navy-900">सरस्वती IAS</span>
-              <span className="text-[8px] sm:text-[10px] font-medium text-gray-500">आपके सपनों को करे साकार ... रखे आगे</span>
+              <span className="text-[8px] sm:text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Since 1998</span>
+              <span className="brand-name text-lg sm:text-2xl text-navy-900">सरस्वती IAS</span>
+              <span className="text-[7px] sm:text-[10px] font-medium text-gray-500">आपके सपनों को करे साकार ... रखे आगे</span>
             </div>
           </Link>
 
@@ -119,7 +119,6 @@ const Navbar = () => {
 
             <NavLink to="/study-material" className={navLinkClass}>Study Material</NavLink>
             <NavLink to="/videos" className={navLinkClass}>Videos</NavLink>
-            <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
             <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
@@ -174,7 +173,6 @@ const Navbar = () => {
 
             <NavLink to="/study-material" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Study Material</NavLink>
             <NavLink to="/videos" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Videos</NavLink>
-            <NavLink to="/gallery" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Gallery</NavLink>
             <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>About Us</NavLink>
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsOpen(false)}>Contact</NavLink>
 
