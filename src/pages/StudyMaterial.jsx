@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const StudyMaterial = () => {
 
   return (
@@ -35,7 +35,7 @@ const StudyMaterial = () => {
                 <div className="p-5 flex flex-col flex-grow text-center">
                   <h3 className="text-lg font-bold font-poppins text-navy-900 mb-2 leading-tight">{book.title}</h3>
                   <p className="text-xs text-gray-500 mb-4 flex-grow">{book.desc}</p>
-                  <a href="/contact" className="btn-secondary text-sm py-2 px-4 w-full">Contact to Buy</a>
+                  <Link to="/contact" className="btn-secondary text-sm py-2 px-4 w-full">Contact to Buy</Link>
                 </div>
               </div>
             ))}
