@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, Clock } from 'lucide-react';
 import { contactInfo } from '../data/contact';
-import { courses, optionalSubjects } from '../data/courses';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    course: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,7 +31,6 @@ const Contact = () => {
 Name: ${formData.name}
 Phone: ${formData.phone}
 Email: ${formData.email}
-Course: ${formData.course}
 Message: ${formData.message}`;
 
     // Construct URLs
@@ -47,7 +44,7 @@ Message: ${formData.message}`;
     window.location.href = emailUrl;
 
     setIsSubmitted(true);
-    setFormData({ name: '', phone: '', email: '', course: '', message: '' });
+    setFormData({ name: '', phone: '', email: '', message: '' });
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -167,37 +164,16 @@ Message: ${formData.message}`;
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email" 
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-1">Interested Course *</label>
-                    <select 
-                      id="course" 
-                      name="course" 
-                      required
-                      value={formData.course}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-white"
-                    >
-                      <option value="" disabled>Select a course</option>
-                      <optgroup label="Main Courses">
-                        {courses.map(c => <option key={c.id} value={c.title}>{c.title}</option>)}
-                      </optgroup>
-                      <optgroup label="Optional Subjects">
-                        {optionalSubjects.map(c => <option key={c.id} value={c.title}>{c.title}</option>)}
-                      </optgroup>
-                    </select>
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
+                  />
                 </div>
 
                 <div>
