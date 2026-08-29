@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Users, BookOpen, Target, Award, CheckCircle, MapPin } from 'lucide-react';
 import CourseCard from '../components/CourseCard';
 import TestimonialCard from '../components/TestimonialCard';
+import RecentVideo from '../components/RecentVideo';
 import { courses } from '../data/courses';
 import { testimonials } from '../data/testimonials';
 import { contactInfo } from '../data/contact';
@@ -117,6 +118,8 @@ const Home = () => {
         </div>
       </div>
     </section>
+
+    <RecentVideo />
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
