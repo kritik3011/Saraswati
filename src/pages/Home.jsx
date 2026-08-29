@@ -181,10 +181,10 @@ const Home = () => {
             <p className="text-gray-600">Hear from our students about their experience and preparation journey with Saraswati IAS.</p>
           </div>
 
-          {/* Mobile: Horizontal scroll with snap, Desktop: Grid */}
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {/* Mobile: Vertical stack, Desktop: Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((test, idx) => (
-              <div key={idx} className="min-w-[85vw] sm:min-w-[350px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink h-full">
+              <div key={idx} className="h-full">
                 <TestimonialCard testimonial={test} />
               </div>
             ))}
