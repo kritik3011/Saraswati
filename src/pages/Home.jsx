@@ -149,29 +149,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Courses Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy-900 mb-4">Our Programs</h2>
-            <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
-            <p className="text-gray-600">Comprehensive courses designed to cover every aspect of your preparation journey.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {courses.slice(0, 3).map((course, idx) => (
-              <CourseCard key={idx} course={course} />
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link to="/courses" className="btn-secondary group">
-              View All Programs <ArrowRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">
