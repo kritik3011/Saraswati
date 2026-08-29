@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, MapPin } from 'lucide-react';
 import { contactInfo } from '../data/contact';
 
 const Navbar = () => {
@@ -125,10 +125,18 @@ const Navbar = () => {
             <Link to="/contact" className="bg-gold text-white px-5 py-2 rounded-md font-semibold hover:bg-orange-600 transition-colors">
               Enquire Now
             </Link>
+            
+            {/* Desktop Location Icon */}
+            <a href={contactInfo.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-navy-900 transition-colors" title="View Location on Map">
+              <MapPin className="w-6 h-6" />
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu & Location Buttons */}
+          <div className="md:hidden flex items-center space-x-4">
+            <a href={contactInfo.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-navy-900 focus:outline-none">
+              <MapPin className="w-6 h-6" />
+            </a>
             <button onClick={() => setIsOpen(!isOpen)} className="text-navy-900 focus:outline-none">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
