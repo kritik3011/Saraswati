@@ -48,9 +48,9 @@ const RecentVideo = () => {
   if (loading || !video) return null;
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+        <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy-900 mb-4">Latest Video</h2>
           <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
           <p className="text-gray-600 mb-6">Stay updated with our latest educational content and preparation strategies.</p>
@@ -76,22 +76,22 @@ const RecentVideo = () => {
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
                   <button 
                     onClick={() => setIsPlaying(true)}
-                    className="w-20 h-20 bg-gold rounded-full flex items-center justify-center text-navy-900 transform transition-transform hover:scale-110 shadow-lg"
+                    className="w-12 h-12 md:w-20 md:h-20 bg-gold rounded-full flex items-center justify-center text-navy-900 transform transition-transform hover:scale-110 shadow-lg mb-8 md:mb-0"
                   >
-                    <Play className="w-10 h-10 ml-2" fill="currentColor" />
+                    <Play className="w-6 h-6 md:w-10 md:h-10 ml-1 md:ml-2" fill="currentColor" />
                   </button>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="text-white text-xl font-bold line-clamp-2">{video.title}</h3>
+                <div className="absolute top-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-b from-black/90 to-transparent">
+                  <h3 className="text-white text-base md:text-xl font-bold line-clamp-2 leading-snug">{video.title}</h3>
                 </div>
               </>
             )}
           </div>
           
-          <div className="text-center mt-10">
+          <div className="text-center mt-8 md:mt-10">
             <Link 
               to="/videos" 
-              className="inline-flex items-center px-8 py-3 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors shadow-md hover:shadow-lg"
+              className="inline-flex items-center px-6 py-3 md:px-8 bg-navy-900 text-white font-semibold rounded-lg hover:bg-navy-800 transition-colors shadow-md hover:shadow-lg text-sm md:text-base"
             >
               View More Videos
             </Link>
