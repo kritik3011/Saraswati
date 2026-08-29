@@ -89,9 +89,9 @@ const CourseDetails = () => {
                   <div className="space-y-6">
                     {course.detailedSyllabus.map((section, idx) => (
                       <div key={idx} className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-                        <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center">
-                          <BookOpen className="w-5 h-5 text-gold mr-3" />
-                          {section.title}
+                        <h3 className="text-lg md:text-xl font-bold text-navy-900 mb-4 flex items-start">
+                          <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-gold mr-3 flex-shrink-0 mt-0.5" />
+                          <span>{section.title}</span>
                         </h3>
                         <ul className="space-y-3">
                           {section.topics.map((topic, topicIdx) => (
