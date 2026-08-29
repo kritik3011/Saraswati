@@ -113,8 +113,8 @@ const Home = () => {
             <div className="w-12 h-12 bg-blue-50 text-gold rounded-full flex items-center justify-center mx-auto mb-3">
               <BookOpen className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-bold text-navy-900 font-poppins">30+</h3>
-            <p className="text-gray-500 text-sm">Comprehensive Courses</p>
+            <h3 className="text-2xl font-bold text-navy-900 font-poppins">Specialized</h3>
+            <p className="text-gray-500 text-sm">Course Programs</p>
           </div>
         </div>
       </div>
