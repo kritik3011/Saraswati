@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, BookOpen, Target, Award, CheckCircle, MapPin } from 'lucide-react';
 import CourseCard from '../components/CourseCard';
-import FacultyCard from '../components/FacultyCard';
 import TestimonialCard from '../components/TestimonialCard';
-import { courses, optionalSubjects } from '../data/courses';
-import { faculty } from '../data/faculty';
+import { courses } from '../data/courses';
 import { testimonials } from '../data/testimonials';
 import { contactInfo } from '../data/contact';
 
