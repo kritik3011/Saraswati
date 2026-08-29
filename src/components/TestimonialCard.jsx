@@ -14,7 +14,7 @@ const TestimonialCard = ({ testimonial }) => {
     <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden">
 
       {/* Top achievement banner */}
-      <div className="bg-navy-900 px-5 py-3 flex items-center justify-between">
+      <div className="bg-navy-900 px-4 py-2.5 md:px-5 md:py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Trophy className="w-4 h-4 text-gold flex-shrink-0" />
           <span className="text-gold font-bold text-sm tracking-wide">{testimonial.achievement}</span>
@@ -27,22 +27,22 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
 
       {/* Card body */}
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-4 md:p-6 flex flex-col flex-1">
         {/* Quote icon */}
-        <div className="mb-4">
-          <Quote className="w-8 h-8 text-gold/30 fill-gold/20" />
+        <div className="mb-2 md:mb-4">
+          <Quote className="w-6 h-6 md:w-8 md:h-8 text-gold/30 fill-gold/20" />
         </div>
 
         {/* Review text */}
-        <p className="text-gray-600 italic leading-relaxed flex-1 text-sm">
+        <p className="text-gray-600 italic leading-relaxed flex-1 text-xs md:text-sm line-clamp-4 md:line-clamp-none">
           "{testimonial.review}"
         </p>
 
         {/* Author */}
-        <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
+        <div className="flex items-center gap-3 mt-4 pt-4 md:mt-6 md:pt-5 border-t border-gray-100">
           {/* Initials avatar */}
-          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
-            <span className="text-white font-black text-sm">{initials}</span>
+          <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
+            <span className="text-white font-black text-xs md:text-sm">{initials}</span>
           </div>
           <div>
             <h4 className="font-bold font-poppins text-navy-900 text-sm">{testimonial.name}</h4>
