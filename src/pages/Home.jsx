@@ -99,8 +99,8 @@ const Home = () => {
             <div className="w-12 h-12 bg-blue-50 text-gold rounded-full flex items-center justify-center mx-auto mb-3">
               <Users className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-bold text-navy-900 font-poppins">10,000+</h3>
-            <p className="text-gray-500 text-sm">Students Guided</p>
+            <h3 className="text-2xl font-bold text-navy-900 font-poppins">Proven</h3>
+            <p className="text-gray-500 text-sm">Track Record</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-blue-50 text-gold rounded-full flex items-center justify-center mx-auto mb-3">
